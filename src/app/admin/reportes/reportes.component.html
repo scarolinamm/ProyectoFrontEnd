@@ -1,0 +1,11 @@
+<div class="reportes">
+  <h2 *ngIf="service.compras_realizadas == 0">
+    No se han realizado ninguna compra
+  </h2>
+  <fieldset *ngIf="service.compras_realizadas != 0">
+    <table>
+      <tbody>
+      </tbody>
+    </table>
+  </fieldset>
+</div>

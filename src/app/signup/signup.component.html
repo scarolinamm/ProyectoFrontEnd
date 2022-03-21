@@ -1,0 +1,24 @@
+<div class="div-login">
+  <form class="login">
+    <fieldset>
+      <legend>Registrarse</legend>
+      <div>
+        <input type="text" placeholder="Nombre de usuario" #nombre required/>
+      </div>
+      <div>
+        <input type="password" placeholder="Contraseña" #password required/>
+      </div>
+      <div>
+        <input type="tel" placeholder="Celular" #cel required/>
+      </div>
+      <div>
+        <input type="mail" placeholder="Correo" #email required/>
+      </div>
+      <div>
+        <button (click)="registrarse(nombre.value, password.value, cel.value, email.value)">
+          Registrarse
+        </button>
+      </div>
+    </fieldset>
+  </form>
+</div>

@@ -1,0 +1,62 @@
+<div class="historial">
+  <h2 *ngIf="service.compras_realizadas_user == 0">
+    No ha realizado ninguna compra
+  </h2>
+  <fieldset *ngIf="service.compras_realizadas_user != 0">
+    <h2>Compras realizadas: {{ service.compras_realizadas_user }}</h2>
+    <div *ngFor="let user of service.users">
+      <div *ngIf="user.nombre == service.useraccount">
+        <table>
+          <tbody>
+            <tr
+              class="compra"
+              *ngFor="let compras of user.compras; let i = index"
+            >
+              <div *ngIf="compras.costo_total != 0">
+                <td>
+                  {{ i + 1 }}
+                </td>
+                <td>
+                  <div></div>
+                </td>
+                <td>
+                  <div></div>
+                </td>
+                <td>
+                  <div>
+                    <p>${{ compras.costo_total }}</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="detalles">
+                    <fieldset>
+                      <table>
+                        <tbody>
+                          <tr *ngFor="let licor of compras.productos">
+                            <td>
+                              <div>
+                                <p>{{ licor.nombre }}</p>
+                              </div>
+                            </td>
+                            <td>
+                              <div></div>
+                            </td>
+                            <td>
+                              <div>
+                                <p>${{ licor.costo }}</p>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </fieldset>
+                  </div>
+                </td>
+              </div>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </fieldset>
+</div>
